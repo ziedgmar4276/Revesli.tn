@@ -1,0 +1,33 @@
+{
+  "name": "Revesli.tn",
+  "version": "1.0.0",
+  "description": "application web  de education numerique  pour les  les  etudiant",
+  "main": "Validation.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-routes": "^1.0.0",
+    "express-session": "^1.17.1",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziedgmar4276/Revesli.tn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ziedgmar4276/Revesli.tn/issues"
+  },
+  "homepage": "https://github.com/ziedgmar4276/Revesli.tn#readme"
+}

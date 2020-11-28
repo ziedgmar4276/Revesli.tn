@@ -1,0 +1,2 @@
+npm install mongoose express -g nodemon body-parser express-routes express-session  joi jsonwebtoken dotenv bcryptjs
+
