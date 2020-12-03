@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "10mb", extended: true }));
 //base de donne  local  a la faine application intergre application sous  web 
 //
 mongoose.connect(
-    "mongodb://localhost:27017/REVESLI",
+    "mongodb://localhost:27017/revesli",
   { useNewUrlParser: true ,useUnifiedTopology:true},
     () => console.log("Connected to DB!")
 );
