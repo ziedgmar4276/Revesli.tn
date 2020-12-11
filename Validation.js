@@ -19,5 +19,18 @@ const loginValidation = (data) => {
     });
     return schema.validate(data);
 }
+//registation de  user  admin  
+const registationValidation_admin = (data) => {
+    const schema = Joi.object({
+       
+       
+        Email: Joi.string().required().email(),
+        Password: Joi.string().required().min(8),
+        
+    });
+    return schema.validate(data);
+};
+
 module.exports.registationValidation = registationValidation;
 module.exports.loginValidation = loginValidation;
+module.exports.registationValidation_admin = registationValidation_admin;

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const users =require("./Routers/users_route");
+const administartion=require("./Routers/Adminstation");
 
 //The bodyParser object exposes various factories to create middlewares.
 // All middlewares will populate the req.body property with the parsed body when the Content-Type request header matches the type option,
@@ -24,6 +25,7 @@ app.use(express.json());
 
 //import  routes 
 app.use("/api/users",users);
+app.use("/api/admin",administartion);
 
     
 /// PORT NODE  JS

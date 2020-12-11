@@ -86,10 +86,10 @@ router.get("/", (req, res) => {
     });
 });
 //logout user
-
   router.get('/logout',async (req, res) => {
     res.status(200).send({ auth: false, token: null });
   });
+  
 // get user with id
 router.get("/:id", (req, res) => {
 
@@ -99,7 +99,7 @@ router.get("/:id", (req, res) => {
             res.status(500).json({ message: "user not found", err: err });
             console.log(err)
 
-        } else {c
+        } else {
             res.status(200).json({ users: rec });
             console.log(rec)
         }
