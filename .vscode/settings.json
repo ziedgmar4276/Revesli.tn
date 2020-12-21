@@ -1,4 +1,6 @@
 {
     "terminal.integrated.automationShell.windows": "C:\\Program Files\\Git\bin\\bash.exe",
     "terminal.integrated.automationShell.linux": "C:\\Program Files\\Git\bin\\bash.exe",
+    "todo-tree.tree.showBadges": false,
+    "todo-tree.tree.showCountsInTree": true,
 }

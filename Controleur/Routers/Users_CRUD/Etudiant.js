@@ -100,7 +100,7 @@ router.get("/:id", (req, res) => {
 
         if (err) {
             res.status(500).json({ message: "user not found", err: err });
-            console.log(err)
+          
 
         } else {
             res.status(200).json({ users: rec });

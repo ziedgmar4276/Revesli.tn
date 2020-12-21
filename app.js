@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const Etudiant =require("./Controleur/Routers/Users_CRUD/Etudiant");
 const sendmail = require("./Controleur/Routers/mail");
+const departement =require("./Controleur/Cours/Departement");
 
 const administartion=require("./Controleur/Routers/Users_CRUD/Adminstation");
 
@@ -10,6 +11,7 @@ const administartion=require("./Controleur/Routers/Users_CRUD/Adminstation");
 // All middlewares will populate the req.body property with the parsed body when the Content-Type request header matches the type option,
 // or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error occurred.
 const bodyParser = require('body-parser');
+const { required } = require("joi");
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 app.use(bodyParser.json({ limit: "10mb", extended: true }));
 
@@ -29,6 +31,7 @@ app.use(express.json());
 app.use("/api/etudiant",Etudiant);
 app.use("/api/admin",administartion);
 app.use('/api/email',sendmail);
+app.use('/api/departement',departement)
 
     
 /// PORT NODE  JS

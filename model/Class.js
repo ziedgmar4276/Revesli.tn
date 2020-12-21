@@ -1,31 +1,20 @@
-const  monogoose =require ("mongoose");
-const  DepartementSchema =new  monogoose.Schema({
-    id_departement:{
-        type :String,
-        required:true,
-    },
-    nom_departement:{
-        type :String,
-        required:true,
-    }
-});
+//TODO ADD  department  shema
 const  ClassSchema =new  monogoose.Schema({
-    id_class:{
+    id_Class:{
         type:String,
         required:true, 
     },
-    nom_class:{
+    nom_Class:{
         type:String,
         required:true,
     },
-    QR_code_Class:{
+    QR_Code_Class:{
         type :String,
         required:true,
     },
-    id_departement:{DepartementSchema},
+   //TODO add object id id_departement:{},
     
 
 });
-module.exports =mongoose.model('Departement',DepartementSchema);
-module.exports =mongoose.model('Class',ClassSchema);
+module.exports =monogoose.model('Class',ClassSchema);
 
