@@ -13,6 +13,10 @@ Phone:{
     type:Number,
     required:true
 },
+Role :{
+    type:Array,
+    required:true
+},
 
 Password:{
     type:String,

@@ -1,2 +1,4 @@
 npm install mongoose express -g nodemon body-parser express-routes express-session  joi jsonwebtoken dotenv bcryptjs
+npm install nodemailer // send email confiramtion 
+
 

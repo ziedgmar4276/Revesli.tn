@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const Administartion = require("../model/administartion_model");
-const {registationValidation_admin,loginValidation} = require("../Validation");
+const Administartion = require("../../../model/administartion");
+const {registationValidation_admin,loginValidation} = require("../../../Services/Auth/Validation");
 //A library to help you hash passwords.
 const bcrypt = require("bcryptjs");
 //json web token  to  code json with scurite
@@ -26,6 +26,7 @@ router.post("/register", async (req, res) => {
     //  declaration  de  donne 
     const newAdmin = new Administartion({ 
         Email: req.body.Email,
+        Role:req.body.Role,
         Password: hashPassword,
     });
     //affiche  sous  terminale  le  resultat  pour le  teste 
@@ -57,7 +58,22 @@ router.post("/login", async (req, res) => {
     //create the token 
     const token =jwt.sign({_id:admin._id},process.env.TOKEN_SECRET);
     res.header("auth-token",token).send(token);
-    console.log ("admin connected de  with password :",admin.Password);
+    console.log (" connected  :",admin.Role,);
   
+});
+///  test =true<
+//update  user  
+router.put("/:id", (req, res) => {
+    Administartion.findOneAndUpdate({ _id: req.params.id }, req.body).then(rec => {
+        if (rec) {
+            res.status(200).json({ message: " user_adminstration  was updated" });
+
+        }
+        else {
+            res.status(500).json({ error: "error " });
+        }
+
+
+    });
 });
 module.exports = router;

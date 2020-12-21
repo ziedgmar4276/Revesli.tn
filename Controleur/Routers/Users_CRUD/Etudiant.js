@@ -1,10 +1,10 @@
 const router = require("express").Router();
 /// creation de rest api  de  client  
 // import  model  user  
-const User = require("../model/users_model");
+const User = require("../../../model/Etudiant");
 
 
-const { registationValidation, loginValidation} = require("../Validation");
+const { registationValidation, loginValidation} = require("../../../Services/Auth/Validation");
 //A library to help you hash passwords.
 const bcrypt = require("bcryptjs");
 //json web token  to  code json with scurite
@@ -34,6 +34,7 @@ router.post("/register", async (req, res) => {
 
         Name: req.body.Name,
         Email: req.body.Email,
+        Role:req.body.Role,
         Phone: req.body.Phone,
         Password: hashPassword,
 
@@ -67,6 +68,8 @@ router.post("/login", async (req, res) => {
     //create the token 
     const token =jwt.sign({_id:client._id},process.env.TOKEN_SECRET);
     res.header("auth-token",token).send(token);
+    console.log (" connected  :",client.Role,);
+
   
 });
 
