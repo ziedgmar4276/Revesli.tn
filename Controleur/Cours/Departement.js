@@ -20,7 +20,7 @@ router.post("/add/",async(req,res)=>{
         }
     );
 });
-// TODO get all  departements
+// get all  departements
 router.get("/",(req,res)=>{
     Departement.find().then(req =>{
         if(req){
@@ -32,8 +32,49 @@ router.get("/",(req,res)=>{
     });
 });
 
-//TODO  DELETE DEPARTEMENT 
-//TODO get department with id 
 
+//TODO get department with id 
+router.get("/:id", (req,res)=>{
+    Departement.findOne({_id:req.params.id},(err,rec)=>{
+        if  (err){
+            res.status(400).json({message: "Departement  not found"});
+
+        }else {
+            res.status(200).json(rec);
+            console.log(rec)
+
+        }
+    });
+});
+
+
+
+//update  depatement  
+router.put("/:id", (req, res) => {
+    Departement.findOneAndUpdate({ _id: req.params.id }, req.body).then(rec => {
+        if (rec) {
+            res.status(200).json({ message: "Departement was updated" });
+
+        }
+        else {
+            res.status(500).json({ error: "error " });
+        }
+
+
+    });
+});
+// delate  etudiant
+router.delete('/:id', (req, res) => {
+Departement.findByIdAndDelete({ _id: req.params.id }, (err, req) => {
+        if (req) {
+            res.status(200).json({ message: "Departement deleted successfully" });
+        } else {
+            res.status(500).json({ error: "error" });
+        }
+
+
+    });
+});
+// final  creation rest api  Depatement
 
 module.exports =router;

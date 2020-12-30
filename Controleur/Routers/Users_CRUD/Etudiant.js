@@ -114,7 +114,7 @@ router.get("/:id", (req, res) => {
 router.put("/:id", (req, res) => {
     User.findOneAndUpdate({ _id: req.params.id }, req.body).then(rec => {
         if (rec) {
-            res.status(200).json({ message: "event was updated" });
+            res.status(200).json({ message: "etudiant  was updated" });
 
         }
         else {
@@ -124,6 +124,7 @@ router.put("/:id", (req, res) => {
 
     });
 });
+// delate  etudiant
 router.delete('/:id', (req, res) => {
     User.findByIdAndDelete({ _id: req.params.id }, (err, req) => {
         if (req) {

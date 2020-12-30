@@ -1,10 +1,7 @@
-//TODO ADD  department  shema
-const  ClassSchema =new  monogoose.Schema({
-    id_Class:{
-        type:String,
-        required:true, 
-    },
-    nom_Class:{
+const mongoose = require ('mongoose');
+const  ClassSchema =new  mongoose.Schema({
+    _id: new mongoose.Types.ObjectId(),
+    Nom_Class:{
         type:String,
         required:true,
     },
@@ -12,9 +9,9 @@ const  ClassSchema =new  monogoose.Schema({
         type :String,
         required:true,
     },
-   //TODO add object id id_departement:{},
+  
     
 
 });
-module.exports =monogoose.model('Class',ClassSchema);
+module.exports =mongoose.model('Class',ClassSchema);
 
