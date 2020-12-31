@@ -6,6 +6,8 @@ const Etudiant =require("./controllers/Users/Etudiant");
 //const sendmail = require("./typings/mail");
 const departement =require("./controllers/Cours/Departement");
 
+const users = require("./controllers/Users/Users");
+
 const administartion=require("./controllers/Users/Adminstation");
 
 //The bodyParser object exposes various factories to create middlewares.
@@ -33,6 +35,10 @@ app.use("/api/etudiant",Etudiant);
 app.use("/api/admin",administartion);
 //app.use('/api/email',sendmail);
 app.use('/api/departement',departement)
+
+
+//common routes
+app.use('/api/users',users);
 
     
 /// PORT NODE  JS

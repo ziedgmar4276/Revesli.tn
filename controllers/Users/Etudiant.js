@@ -138,4 +138,8 @@ router.delete('/:id', (req, res) => {
 // final  creation rest api  client
  
 
+// router.get('/test', (req, res) => {
+//     return res.status(200);
+// });
+
 module.exports = router;
