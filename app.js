@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Etudiant =require("./Controleur/Routers/Users_CRUD/Etudiant");
-const sendmail = require("./Controleur/Routers/mail");
-const departement =require("./Controleur/Cours/Departement");
+const Etudiant =require("./controllers/Users/Etudiant");
+const sendmail = require("./typings/mail");
+//const departement =require("./controllers/Cours/Departement");
 
-const administartion=require("./Controleur/Routers/Users_CRUD/Adminstation");
+const administartion=require("./controllers/Users/Adminstation");
 
 //The bodyParser object exposes various factories to create middlewares.
 // All middlewares will populate the req.body property with the parsed body when the Content-Type request header matches the type option,
@@ -31,7 +31,7 @@ app.use(express.json());
 app.use("/api/etudiant",Etudiant);
 app.use("/api/admin",administartion);
 app.use('/api/email',sendmail);
-app.use('/api/departement',departement)
+//app.use('/api/departement',departement)
 
     
 /// PORT NODE  JS

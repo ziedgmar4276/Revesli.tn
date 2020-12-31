@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const Administartion = require("../../../model/administartion");
-const {registationValidation_admin,loginValidation} = require("../../../Services/Auth/Validation");
+const Administartion = require("../../models/administartion");
+const {registationValidation_admin,loginValidation} = require("../../middlewares/Validation");
 //A library to help you hash passwords.
 const bcrypt = require("bcryptjs");
 //json web token  to  code json with scurite

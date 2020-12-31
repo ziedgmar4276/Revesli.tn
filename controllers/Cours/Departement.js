@@ -1,6 +1,6 @@
 
 const router =require("express").Router();
-const Departement=require("../../model/Departement");
+const Departement=require("../../models/Departement");
   // ID_department desn't exist
   //add  departement
 router.post("/add/",async(req,res)=>{

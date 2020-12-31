@@ -1,10 +1,10 @@
 const router = require("express").Router();
 /// creation de rest api  de  client  
 // import  model  user  
-const User = require("../../../model/Etudiant");
+const User = require("../../models/Etudiant");
 
 
-const { registationValidation, loginValidation} = require("../../../Services/Auth/Validation");
+const { registationValidation, loginValidation} = require("../../middlewares/Validation");
 //A library to help you hash passwords.
 const bcrypt = require("bcryptjs");
 //json web token  to  code json with scurite
