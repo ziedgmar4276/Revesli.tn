@@ -9,6 +9,7 @@ Email:{
     type:String,
     required:true,
 },
+
 Phone:{
     type:Number,
     required:true
