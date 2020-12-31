@@ -26,7 +26,6 @@ router.post("/register", async (req, res) => {
     //  declaration  de  donne 
     const newAdmin = new Administartion({ 
         Email: req.body.Email,
-        Role:req.body.Role,
         Password: hashPassword,
     });
     //affiche  sous  terminale  le  resultat  pour le  teste 

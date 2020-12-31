@@ -5,7 +5,6 @@ const registationValidation = (data) => {
         Name: Joi.string().required(),
         Phone: Joi.string().required().max(15),
         //Phone number validation rule for Joi
-        Role: Joi.string().required(),
         Email: Joi.string().required().email(),
         Password: Joi.string().required().min(8),
       
@@ -23,10 +22,7 @@ const loginValidation = (data) => {
 //registation de  user  admin  
 const registationValidation_admin = (data) => {
     const schema = Joi.object({
-       
-       
         Email: Joi.string().required().email(),
-        Role: Joi.string().required(),
         Password: Joi.string().required().min(8),
         
     });

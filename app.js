@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
 const Etudiant =require("./controllers/Users/Etudiant");
@@ -26,7 +27,7 @@ mongoose.connect(
 //Returns middleware that parses both json and urlencoded
 app.use(express.json());
 
-
+app.use(cors());
 //import  routes 
 app.use("/api/etudiant",Etudiant);
 app.use("/api/admin",administartion);

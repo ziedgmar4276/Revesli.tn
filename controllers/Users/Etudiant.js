@@ -37,7 +37,6 @@ router.post("/register", async (req, res) => {
 
         Name: req.body.Name,
         Email: req.body.Email,
-        Role:req.body.Role,
         Phone: req.body.Phone,
         Password: hashPassword,
 
@@ -70,7 +69,8 @@ router.post("/login", async (req, res) => {
 
     //create the token 
     const token =jwt.sign({_id:client._id},process.env.TOKEN_SECRET);
-    res.header("auth-token",token).send(token);
+    // res.header("auth-token",token).send(token);
+    res.status(200).json(token);
     console.log (" connected  :",client.Role,);
 
   
