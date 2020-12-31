@@ -3,6 +3,7 @@ const router = require("express").Router();
 // import  model  user  
 const User = require("../../models/Etudiant");
 
+const auth = require("../../middlewares/verifyToken");
 
 const { registationValidation, loginValidation} = require("../../middlewares/Validation");
 //A library to help you hash passwords.
@@ -13,6 +14,8 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 //Create a session middleware with the given options
 const session = require("express-session");
+const { response } = require("express");
+const verifyToken = require("../../middlewares/verifyToken");
 
 require('dotenv').config();
 // registation client
@@ -75,17 +78,13 @@ router.post("/login", async (req, res) => {
 
 
 // get all  users
-router.get("/", (req, res) => {
+router.get("/",auth, (req, res) => {
     User.find().then(req => {
         if (req) {
             res.status(200).json(req);
-
-
         } else {
             res.status(500).json({ message: "user not found" });
         }
-
-
     });
 });
 //logout user

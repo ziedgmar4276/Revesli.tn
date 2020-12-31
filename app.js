@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Etudiant =require("./controllers/Users/Etudiant");
-const sendmail = require("./typings/mail");
+//const sendmail = require("./typings/mail");
 const departement =require("./controllers/Cours/Departement");
 
 const administartion=require("./controllers/Users/Adminstation");
@@ -30,7 +30,7 @@ app.use(express.json());
 //import  routes 
 app.use("/api/etudiant",Etudiant);
 app.use("/api/admin",administartion);
-app.use('/api/email',sendmail);
+//app.use('/api/email',sendmail);
 app.use('/api/departement',departement)
 
     
