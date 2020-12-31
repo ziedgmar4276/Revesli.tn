@@ -1,11 +1,14 @@
-const  monogoose =require ("mongoose");
+const  mongoose =require ("mongoose");
 
-const  DepartementSchema =new  monogoose.Schema({
+const  DepartementSchema =new  mongoose.Schema({
  
     Nom_Departement:{
         type :String,
         required:true,
     },
+    classes : [
+        {type: mongoose.Schema.Types.ObjectId,ref:'Class'}
+    ]
    
 });
-module.exports =monogoose.model('Departement',DepartementSchema);
+module.exports =mongoose.model('Departement',DepartementSchema);

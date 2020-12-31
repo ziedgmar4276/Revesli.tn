@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Etudiant =require("./controllers/Users/Etudiant");
 //const sendmail = require("./typings/mail");
 const departement =require("./controllers/Cours/Departement");
+const classs =require("./controllers/Cours/Class");
 
 const users = require("./controllers/Users/Users");
 
@@ -34,7 +35,8 @@ app.use(cors());
 app.use("/api/etudiant",Etudiant);
 app.use("/api/admin",administartion);
 //app.use('/api/email',sendmail);
-app.use('/api/departement',departement)
+app.use('/api/departement',departement);
+app.use('/api/class',classs);
 
 
 //common routes

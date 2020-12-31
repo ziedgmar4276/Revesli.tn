@@ -1,6 +1,5 @@
 const mongoose = require ('mongoose');
 const  ClassSchema =new  mongoose.Schema({
-    _id: new mongoose.Types.ObjectId(),
     Nom_Class:{
         type:String,
         required:true,
@@ -9,6 +8,10 @@ const  ClassSchema =new  mongoose.Schema({
         type :String,
         required:true,
     },
+    department :{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Departement'
+    }
   
     
 

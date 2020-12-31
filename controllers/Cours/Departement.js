@@ -7,7 +7,6 @@ router.post("/add/",async(req,res)=>{
   const  departementExist =await Departement.findOne({Nom_Departement:req.body.Nom_Departement});
   if(departementExist)return res.status(400).send("Departement already exists");
     const newDepartement = new  Departement({
-        
         Nom_Departement:req.body.Nom_Departement,
     });
     console.log ("add");
