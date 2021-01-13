@@ -28,7 +28,7 @@ mongoose.connect(
     () => console.log("Connected to DB!")
 );
 //Returns middleware that parses both json and urlencoded
-app.use(express.json());
+  app.use(express.json());
 
 app.use(cors());
 //import  routes 

@@ -21,3 +21,4 @@ Password:{
 }
 });
 module.exports =mongoose.model('Etudiant',UserSchema);
+    
